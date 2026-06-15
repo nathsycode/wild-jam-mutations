@@ -1,0 +1,156 @@
+{
+  "activeTheme": "dark",
+  "boardSortingOption": "default",
+  "columnZoomLevel": 0,
+  "colors": {
+    "accent": "#c4b28a",
+    "accentDarker": "#a8996e",
+    "bgPrimary": "#14171d",
+    "elevation1": "#1f1f26",
+    "elevation2": "#22262d",
+    "elevation3": "#2a2d35",
+    "text": "#c5c9c7",
+    "textButtons": "#c5c9c7",
+    "textD1": "#c5c9c7",
+    "textD2": "#a4a7a4",
+    "textD3": "#8992a7",
+    "textD4": "#75797f"
+  },
+  "boards": [
+    {
+      "id": "wild-jam-mutations-board",
+      "title": "Wild Jam 94",
+      "lastEdited": "2026-06-14T00:00:00.000Z",
+      "background": null,
+      "globalTags": null,
+      "columns": [
+        {
+          "id": "col-backlog",
+          "title": "Backlog",
+          "cards": [
+            {
+              "id": "card-d2",
+              "name": "Day 2 (Jun 15): Core Loop",
+              "color": "#22262d",
+              "tasks": [
+                { "id": "t-2-1", "finished": false, "name": "2.1 Eating mechanic (collision + size compare)" },
+                { "id": "t-2-2", "finished": false, "name": "2.2 Biomass system (grow/shrink, no HP)" },
+                { "id": "t-2-3", "finished": false, "name": "2.3 NPC fish spawn + wander AI" },
+                { "id": "t-2-4", "finished": false, "name": "2.4 NPC size-relative behavior (flee/chase)" },
+                { "id": "t-2-5", "finished": false, "name": "2.5 HUD: biomass meter + mutation slots" }
+              ],
+              "tags": [{"text": "core"}]
+            },
+            {
+              "id": "card-d3",
+              "name": "Day 3 (Jun 16): Mutation System",
+              "color": "#22262d",
+              "tasks": [
+                { "id": "t-3-1", "finished": false, "name": "3.1 Mutation Resource data structure" },
+                { "id": "t-3-2", "finished": false, "name": "3.2 Visual attachment (child sprites)" },
+                { "id": "t-3-3", "finished": false, "name": "3.3 Porcupine Spikes mutation" },
+                { "id": "t-3-4", "finished": false, "name": "3.4 Giant Maw mutation" },
+                { "id": "t-3-5", "finished": false, "name": "3.5 Mutation transfer on eat" }
+              ],
+              "tags": [{"text": "mutations"}]
+            },
+            {
+              "id": "card-d4",
+              "name": "Day 4 (Jun 17): Disassembly + More Mutations",
+              "color": "#22262d",
+              "tasks": [
+                { "id": "t-4-1", "finished": false, "name": "4.1 Snake Head venom projectile" },
+                { "id": "t-4-2", "finished": false, "name": "4.2 Angler Lure attraction + visibility" },
+                { "id": "t-4-3", "finished": false, "name": "4.3 Disassembly: scatter mutation parts" },
+                { "id": "t-4-4", "finished": false, "name": "4.4 Fragment collection (swim over)" },
+                { "id": "t-4-5", "finished": false, "name": "4.5 Mutations visible on all NPCs" }
+              ],
+              "tags": [{"text": "mutations"}]
+            },
+            {
+              "id": "card-d5",
+              "name": "Day 5 (Jun 18): Nemesis System",
+              "color": "#22262d",
+              "tasks": [
+                { "id": "t-5-1", "finished": false, "name": "5.1 Nemesis creation on player death" },
+                { "id": "t-5-2", "finished": false, "name": "5.2 Adjective + Name generation" },
+                { "id": "t-5-3", "finished": false, "name": "5.3 Nemesis aggressive hunting AI" },
+                { "id": "t-5-4", "finished": false, "name": "5.4 Growth on repeat kills" },
+                { "id": "t-5-5", "finished": false, "name": "5.5 Save/load Nemeses (JSON)" }
+              ],
+              "tags": [{"text": "nemesis"}]
+            },
+            {
+              "id": "card-d6",
+              "name": "Day 6 (Jun 19): Economy + Checkout",
+              "color": "#22262d",
+              "tasks": [
+                { "id": "t-6-1", "finished": false, "name": "6.1 Fish Bucks essence drops" },
+                { "id": "t-6-2", "finished": false, "name": "6.2 Result screen (death stats)" },
+                { "id": "t-6-3", "finished": false, "name": "6.3 Checkout UI screen" },
+                { "id": "t-6-4", "finished": false, "name": "6.4 5 permanent upgrades" },
+                { "id": "t-6-5", "finished": false, "name": "6.5 Full persistence (save file)" }
+              ],
+              "tags": [{"text": "economy"}]
+            },
+            {
+              "id": "card-d7",
+              "name": "Day 7 (Jun 20): Ecosystem + Apex + Turtle",
+              "color": "#22262d",
+              "tasks": [
+                { "id": "t-7-1", "finished": false, "name": "7.1 Ecosystem Director (tier-relative spawns)" },
+                { "id": "t-7-2", "finished": false, "name": "7.2 Apex tracking (largest fish = Apex)" },
+                { "id": "t-7-3", "finished": false, "name": "7.3 Apex aggressive behavior + HUD tracker" },
+                { "id": "t-7-4", "finished": false, "name": "7.4 Win condition (eat Apex → victory)" },
+                { "id": "t-7-5", "finished": false, "name": "7.5 Turtle NPC (shell, Giant Maw only)" }
+              ],
+              "tags": [{"text": "ecosystem"}]
+            },
+            {
+              "id": "card-d8",
+              "name": "Day 8 (Jun 21): Polish + Ship",
+              "color": "#22262d",
+              "tasks": [
+                { "id": "t-8-1", "finished": false, "name": "8.1 BFXR sound effects" },
+                { "id": "t-8-2", "finished": false, "name": "8.2 Visual juice (particles, screen shake)" },
+                { "id": "t-8-3", "finished": false, "name": "8.3 Playtest + bug fixes" },
+                { "id": "t-8-4", "finished": false, "name": "8.4 Export Windows/Linux builds" },
+                { "id": "t-8-5", "finished": false, "name": "8.5 Jam page + itch.io upload" }
+              ],
+              "tags": [{"text": "polish"}]
+            }
+          ]
+        },
+        {
+          "id": "col-today",
+          "title": "Today",
+          "cards": [
+            {
+              "id": "card-d1",
+              "name": "Day 1 (Jun 14): Mini-Aquarium",
+              "color": "#c4b28a",
+              "tasks": [
+                { "id": "t-1-1", "finished": false, "name": "1.1 Arena: 3840×2160 world, wrap edges" },
+                { "id": "t-1-2", "finished": false, "name": "1.2 Background: draw 2 water tiles + TileMap" },
+                { "id": "t-1-3", "finished": false, "name": "1.3 Camera2D smooth follow, bounded" },
+                { "id": "t-1-4", "finished": false, "name": "1.4 Pish movement: mouse-follow + steering" },
+                { "id": "t-1-5", "finished": false, "name": "1.5 Fog shader: radius + cone vision" }
+              ],
+              "tags": [{"text": "today"}]
+            }
+          ]
+        },
+        {
+          "id": "col-progress",
+          "title": "In Progress",
+          "cards": []
+        },
+        {
+          "id": "col-done",
+          "title": "Done",
+          "cards": []
+        }
+      ]
+    }
+  ]
+}

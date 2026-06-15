@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://oco7jwpfydw1"]
+
+[ext_resource type="Texture2D" uid="uid://dxb4ct71ye8wx" path="res://assets/pish.png" id="1_8p0ks"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjnda"]
+radius = 7.0
+height = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p0ks"]
+atlas = ExtResource("1_8p0ks")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1onpt"]
+atlas = ExtResource("1_8p0ks")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc62m"]
+atlas = ExtResource("1_8p0ks")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m16vl"]
+atlas = ExtResource("1_8p0ks")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8nyit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p0ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1onpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc62m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m16vl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pish" type="CharacterBody2D" unique_id=1813960478]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1785718867]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mjnda")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401032299]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8nyit")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2142166343]
+limit_left = 0
+limit_top = 0
+limit_right = 3840
+limit_bottom = 2160
+position_smoothing_enabled = true
+
+[node name="DebugText" type="Label" parent="." unique_id=2093405621]
+texture_filter = 1
+offset_left = -91.0
+offset_top = 16.0
+offset_right = 92.0
+offset_bottom = 39.0
+text = "current m/s: "
+horizontal_alignment = 1
+vertical_alignment = 1

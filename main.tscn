@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dryu1i3bk3svc"]
+
+[ext_resource type="Script" uid="uid://bld1dopgy08c0" path="res://main.gd" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://oco7jwpfydw1" path="res://pish.tscn" id="1_ig7tw"]
+[ext_resource type="Shader" uid="uid://bd4avpxo0krv" path="res://visibility.gdshader" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://ci7fiosiiw2nr" path="res://tile_map_layer.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://vky6jlfw2dsd" path="res://assets/water_values.png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://ctg8ujdq7h1f4" path="res://pish.gd" id="4_1bvp3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nyit"]
+shader = ExtResource("1_lquwl")
+shader_parameter/center_px = Vector2(960, 540)
+shader_parameter/radius_px = 450.0
+shader_parameter/feather_px = 120.0
+shader_parameter/ambient_visibility = 0.15
+shader_parameter/fog_color = Vector4(0.02, 0.05, 0.12, 0.85)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
+texture = ExtResource("2_h2yge")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h2yge"]
+sources/0 = SubResource("TileSetAtlasSource_1bvp3")
+
+[node name="Main" type="Node2D" unique_id=563290714]
+script = ExtResource("1_7mycd")
+
+[node name="VisibilityMask" type="CanvasLayer" parent="." unique_id=1408999356]
+
+[node name="ColorRect" type="ColorRect" parent="VisibilityMask" unique_id=343805948]
+material = SubResource("ShaderMaterial_8nyit")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="World" type="TileMapLayer" parent="." unique_id=487475628]
+tile_set = SubResource("TileSet_h2yge")
+script = ExtResource("2_0xm2m")
+
+[node name="Pish" parent="." unique_id=1813960478 instance=ExtResource("1_ig7tw")]
+script = ExtResource("4_1bvp3")

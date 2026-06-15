@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Build exports
+android/
+web/
+windows/
+linux/
+macos/
+
+# Imported assets (Godot reimports from source)
+*.import
+
+# Export presets (may contain local paths)
+export_presets.cfg
+
+# Translation binaries (generated from .csv)
+*.translation
