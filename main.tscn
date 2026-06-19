@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ci7fiosiiw2nr" path="res://tile_map_layer.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://sawty0f3dqxo" path="res://director.gd" id="2_5vw27"]
 [ext_resource type="Texture2D" uid="uid://vky6jlfw2dsd" path="res://assets/water_values.png" id="2_h2yge"]
-[ext_resource type="AudioStream" uid="uid://brigg6l40jsie" path="res://assets/sounds/Pineapple Under The Sea.ogg" id="7_272bh"]
+[ext_resource type="AudioStream" uid="uid://dd3rixrovtvn2" path="res://assets/sounds/Pineapple Under The Sea.ogg" id="7_272bh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8nyit"]
 shader = ExtResource("1_lquwl")
@@ -34,7 +34,7 @@ script = ExtResource("2_5vw27")
 [node name="StartBG" type="AudioStreamPlayer" parent="Director" unique_id=714597199]
 unique_name_in_owner = true
 stream = ExtResource("7_272bh")
-parameters/looping = false
+parameters/looping = true
 
 [node name="VisibilityMask" type="CanvasLayer" parent="." unique_id=1408999356]
 

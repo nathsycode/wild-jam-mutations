@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dfpetpcy4n8xv" path="res://HitboxComponent.gd" id="3_6ik3a"]
 [ext_resource type="Script" uid="uid://dxowjwqcgcgum" path="res://HurtboxComponent.gd" id="4_oovoc"]
 [ext_resource type="AudioStream" uid="uid://bippeb4p4b0v2" path="res://assets/sounds/crunch_quick.wav" id="6_10mov"]
+[ext_resource type="Script" uid="uid://2358vkj7dcuq" path="res://CombatResolver.gd" id="6_xn1kp"]
 
 [node name="Fish" type="CharacterBody2D" unique_id=2057179038]
 script = ExtResource("1_8vtik")
@@ -29,6 +30,10 @@ metadata/_custom_type_script = "uid://dfpetpcy4n8xv"
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=1863934528]
 script = ExtResource("4_oovoc")
 metadata/_custom_type_script = "uid://dxowjwqcgcgum"
+
+[node name="CombatResolver" type="Node" parent="." unique_id=827477907]
+script = ExtResource("6_xn1kp")
+metadata/_custom_type_script = "uid://2358vkj7dcuq"
 
 [node name="CrunchQuick" type="AudioStreamPlayer" parent="." unique_id=48846181]
 stream = ExtResource("6_10mov")
