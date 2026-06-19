@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://vhrtsfrlc5ic"]
+
+[ext_resource type="PackedScene" uid="uid://b0sk2onf5mxr2" path="res://fish.tscn" id="1_aa5fv"]
+[ext_resource type="Script" uid="uid://b34ehvomr4rl1" path="res://npc_fish.gd" id="2_2ig70"]
+[ext_resource type="Texture2D" uid="uid://d4cmpm2ttur60" path="res://assets/minnow.png" id="2_gu60m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_774dk"]
+atlas = ExtResource("2_gu60m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu60m"]
+atlas = ExtResource("2_gu60m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ig70"]
+atlas = ExtResource("2_gu60m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s71rk"]
+atlas = ExtResource("2_gu60m")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_774dk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_774dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu60m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ig70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s71rk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gu60m"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjnda"]
+radius = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjnda"]
+radius = 9.0
+height = 34.0
+
+[node name="Minnow" unique_id=2057179038 instance=ExtResource("1_aa5fv")]
+script = ExtResource("2_2ig70")
+angle_change_time_min = 1.5
+angle_change_time_max = 6.0
+angle_range_min = -15.0
+angle_range_max = 15.0
+
+[node name="Sprite" parent="." index="0" unique_id=1808217413]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_774dk")
+frame_progress = 0.46740502
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=985910882]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_gu60m")
+
+[node name="BiomassComponent" parent="." index="3" unique_id=993097055]
+current_biomass = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" parent_id_path=PackedInt32Array(1349127643) index="0" unique_id=2064098812]
+position = Vector2(-8, 0)
+shape = SubResource("CircleShape2D_mjnda")
+debug_color = Color(0.82329357, 0.37845528, 0.35609046, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" parent_id_path=PackedInt32Array(1863934528) index="0" unique_id=281606400]
+position = Vector2(1, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mjnda")
+debug_color = Color(0.41652402, 0.5930297, 0.35087582, 0.41960785)
+
+[node name="AngleTimer" type="Timer" parent="." index="6" unique_id=606410710]
+
+[node name="DebugText" type="Label" parent="." index="7" unique_id=1293022854]
+offset_left = -50.0
+offset_top = 12.0
+offset_right = 51.0
+offset_bottom = 35.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="AngleTimer" to="." method="_on_angle_timer_timeout"]

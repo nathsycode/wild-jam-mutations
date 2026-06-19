@@ -60,8 +60,25 @@ A fish's size. The single attribute that determines everything:
 - **Shrinkage** — taking damage reduces biomass (and thus place in the food chain).
 - There is no separate "health" stat. You are alive until something larger eats you.
 
-### Food Chain (Strict Size Tier)
-A fish can only eat another fish that is **visibly smaller** than itself. The rule is visual and absolute — no exceptions except what mutations explicitly override (e.g., Giant Maw allows eating same-size fish during its window).
+### Food Chain (Size Tier with Damage Threshold)
+When two fish bodies overlap, the outcome depends on the **biomass difference**:
+
+- **Diff > 5**: The larger fish instantly eats the smaller. The eaten dies, the eater gains biomass.
+- **0 < Diff ≤ 5** (close scrap): The smaller fish takes biomass damage and shrinks. The larger is unharmed.
+- **Diff = 0** (equal): Both take biomass damage. If this drops to 0, the fish dies.
+- **0 biomass = death**: A fish reduced to 0 dies. Its body (corpse) can be eaten by another fish for partial biomass gain.
+
+**Damage formula** (when a fish takes damage from a scrap): `max(5, 0.1 × biomass)` — floor of 5, plus 10% of current biomass. Every scrap hurts at least 5; large fish take more (10 at max biomass).
+
+**Biomass values:**
+- **Starting biomass:** 10 (player spawns as a tiny fish)
+- **Max biomass:** 100 (Apex size)
+- **Gain on eat:** 10% of the victim's biomass
+- **Death at 0:** Damage or being eaten drops biomass below zero → death + corpse
+
+> **Tuning note:** The ±5 threshold, damage formula, and growth rate are starting values. Will be tuned in playtesting.
+
+This creates non-lethal scraps over similar-size prey — the smaller fish gets punished and may shrink into an eatable tier, while the larger avoids risk. Equal confrontations hurt both, discouraging head-on fights unless you have a mutation (Giant Maw, Porcupine Spikes).
 
 **Tier progression:** smaller → similar → larger → Apex. The Apex is simply whatever fish currently has the highest biomass in the ocean.
 

@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://oco7jwpfydw1" path="res://pish.tscn" id="1_ig7tw"]
 [ext_resource type="Shader" uid="uid://bd4avpxo0krv" path="res://visibility.gdshader" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://ci7fiosiiw2nr" path="res://tile_map_layer.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://sawty0f3dqxo" path="res://director.gd" id="2_5vw27"]
 [ext_resource type="Texture2D" uid="uid://vky6jlfw2dsd" path="res://assets/water_values.png" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://ctg8ujdq7h1f4" path="res://pish.gd" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://brigg6l40jsie" path="res://assets/sounds/Pineapple Under The Sea.ogg" id="7_272bh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8nyit"]
 shader = ExtResource("1_lquwl")
@@ -27,6 +28,14 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 [node name="Main" type="Node2D" unique_id=563290714]
 script = ExtResource("1_7mycd")
 
+[node name="Director" type="Node" parent="." unique_id=1698533064]
+script = ExtResource("2_5vw27")
+
+[node name="StartBG" type="AudioStreamPlayer" parent="Director" unique_id=714597199]
+unique_name_in_owner = true
+stream = ExtResource("7_272bh")
+parameters/looping = false
+
 [node name="VisibilityMask" type="CanvasLayer" parent="." unique_id=1408999356]
 
 [node name="ColorRect" type="ColorRect" parent="VisibilityMask" unique_id=343805948]
@@ -39,8 +48,8 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="World" type="TileMapLayer" parent="." unique_id=487475628]
+unique_name_in_owner = true
 tile_set = SubResource("TileSet_h2yge")
 script = ExtResource("2_0xm2m")
 
 [node name="Pish" parent="." unique_id=1813960478 instance=ExtResource("1_ig7tw")]
-script = ExtResource("4_1bvp3")

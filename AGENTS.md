@@ -116,16 +116,17 @@ Tasks are tracked here. The agent manages the list; the human marks items done.
 
 ### Phase 0: Scaffold & Design (Day 1)
 - [x] Create Godot 4.x project in repo root — Godot 4.7, GL Compatibility, named `wild-jam-mutations`
-- [ ] Finalize mutation catalog (3-5 mutations for jam scope)
-- [ ] Decide wildcard integration (Disassembly Required? Checkout? Turtle?)
-- [ ] Rough paper-sketch of main scene layout
-- [ ] Set up `.gitignore` (Godot template)
+- [x] Finalize mutation catalog (4 initial mutations + 8 stretch, see CONTEXT.md)
+- [x] Decide wildcard integration: all 3 (Disassembly Required, Checkout, Turtle)
+- [x] Rough paper-sketch of main scene layout
+- [x] Set up `.gitignore` (Godot template)
+- [x] Create ADRs for key arch decisions (Nemesis→Apex, Biomass=size, Checkout)
 
 ### Phase 1: Core Loop (Day 1-2)
-- [ ] Player fish: basic sprite + WASD movement
-- [ ] Camera follow (smooth, bounded to play area)
+- [x] Player fish: basic sprite + mouse-follow movement with steering
+- [x] Camera follow (smooth, bounded to 3840×2160)
 - [ ] Basic eat mechanic: collision + size comparison → grow
-- [ ] NPC fish: simple AI (wander / flee / chase based on relative size)
+- [ ] NPC fish: simple AI (wander only — flee/chase deferred)
 
 ### Phase 2: Mutations (Day 3-4)
 - [ ] Mutation data structure (Resource or Dictionary)

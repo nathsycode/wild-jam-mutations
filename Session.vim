@@ -10,28 +10,28 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +0 pish.gd
+badd +2 /tmp/pi-editor-1781844842757.pi.md
 argglobal
 %argdel
-edit pish.gd
+$argadd /tmp/pi-editor-1781844842757.pi.md
+edit /tmp/pi-editor-1781844842757.pi.md
 argglobal
-balt pish.gd
 setlocal foldmethod=manual
-setlocal foldexpr=<SNR>37_GDScriptFoldLevel()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
-setlocal foldignore=
+setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 11) / 22)
+let s:l = 2 - ((1 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 2
+normal! 078|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

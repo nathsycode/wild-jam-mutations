@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b0sk2onf5mxr2"]
+
+[ext_resource type="Script" uid="uid://cnpv7apnao3qo" path="res://fish.gd" id="1_8vtik"]
+[ext_resource type="Script" uid="uid://dm1wpg77aao41" path="res://MovementComponent.gd" id="1_xu20i"]
+[ext_resource type="Script" uid="uid://cjh6xnn1k4gbf" path="res://BiomassComponent.gd" id="2_hgn23"]
+[ext_resource type="Script" uid="uid://dfpetpcy4n8xv" path="res://HitboxComponent.gd" id="3_6ik3a"]
+[ext_resource type="Script" uid="uid://dxowjwqcgcgum" path="res://HurtboxComponent.gd" id="4_oovoc"]
+[ext_resource type="AudioStream" uid="uid://bippeb4p4b0v2" path="res://assets/sounds/crunch_quick.wav" id="6_10mov"]
+
+[node name="Fish" type="CharacterBody2D" unique_id=2057179038]
+script = ExtResource("1_8vtik")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1808217413]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985910882]
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1046172570]
+script = ExtResource("1_xu20i")
+metadata/_custom_type_script = "uid://dm1wpg77aao41"
+
+[node name="BiomassComponent" type="Node" parent="." unique_id=993097055]
+script = ExtResource("2_hgn23")
+metadata/_custom_type_script = "uid://cjh6xnn1k4gbf"
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1349127643]
+script = ExtResource("3_6ik3a")
+metadata/_custom_type_script = "uid://dfpetpcy4n8xv"
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1863934528]
+script = ExtResource("4_oovoc")
+metadata/_custom_type_script = "uid://dxowjwqcgcgum"
+
+[node name="CrunchQuick" type="AudioStreamPlayer" parent="." unique_id=48846181]
+stream = ExtResource("6_10mov")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

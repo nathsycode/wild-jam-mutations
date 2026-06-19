@@ -1,70 +1,96 @@
 [gd_scene format=3 uid="uid://oco7jwpfydw1"]
 
-[ext_resource type="Texture2D" uid="uid://dxb4ct71ye8wx" path="res://assets/pish.png" id="1_8p0ks"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjnda"]
-radius = 7.0
-height = 32.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8p0ks"]
-atlas = ExtResource("1_8p0ks")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1onpt"]
-atlas = ExtResource("1_8p0ks")
-region = Rect2(32, 0, 32, 32)
+[ext_resource type="PackedScene" uid="uid://b0sk2onf5mxr2" path="res://fish.tscn" id="1_8p0ks"]
+[ext_resource type="Texture2D" uid="uid://dxb4ct71ye8wx" path="res://assets/pish.png" id="2_1onpt"]
+[ext_resource type="Script" uid="uid://ctg8ujdq7h1f4" path="res://pish.gd" id="2_oc62m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc62m"]
-atlas = ExtResource("1_8p0ks")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("2_1onpt")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m16vl"]
-atlas = ExtResource("1_8p0ks")
+atlas = ExtResource("2_1onpt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drp4i"]
+atlas = ExtResource("2_1onpt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im6pt"]
+atlas = ExtResource("2_1onpt")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8nyit"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8p0ks"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8p0ks")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1onpt")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oc62m")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m16vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drp4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im6pt")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Pish" type="CharacterBody2D" unique_id=1813960478]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1onpt"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1785718867]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8nyit"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nyit"]
+radius = 19.999998
+height = 70.0
+
+[node name="Pish" unique_id=2057179038 groups=["Players"] instance=ExtResource("1_8p0ks")]
+script = ExtResource("2_oc62m")
+normal_zoom = 3.0
+intro_zoom = 0.5
+intro_hold_time = 0.6
+intro_zoom_time = 2.0
+
+[node name="Sprite" parent="." index="0" unique_id=1808217413]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8p0ks")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=985910882]
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_mjnda")
+shape = SubResource("CapsuleShape2D_1onpt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401032299]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_8nyit")
+[node name="MovementComponent" parent="." index="2" unique_id=1046172570]
+max_speed = 200.0
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2142166343]
-limit_left = 0
-limit_top = 0
-limit_right = 3840
-limit_bottom = 2160
-position_smoothing_enabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" parent_id_path=PackedInt32Array(1349127643) index="0" unique_id=244070900]
+position = Vector2(-10, 0)
+shape = SubResource("CircleShape2D_8nyit")
+debug_color = Color(0.7504758, 0.42249003, 0.4908443, 0.41960785)
 
-[node name="DebugText" type="Label" parent="." unique_id=2093405621]
-texture_filter = 1
-offset_left = -91.0
-offset_top = 16.0
-offset_right = 92.0
-offset_bottom = 39.0
-text = "current m/s: "
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" parent_id_path=PackedInt32Array(1863934528) index="0" unique_id=172336447]
+position = Vector2(-2.3841858e-07, -8.4703295e-21)
+rotation = 1.5707964
+scale = Vector2(-0.4, -0.4)
+shape = SubResource("CapsuleShape2D_8nyit")
+debug_color = Color(0.5897036, 0.5416527, 0.24478713, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." index="6" unique_id=1532161367]
+
+[node name="DebugText" type="Label" parent="." index="7" unique_id=741487661]
+offset_left = -47.0
+offset_top = 12.0
+offset_right = 47.0
+offset_bottom = 35.0
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="AngleCheck" type="Label" parent="." index="8" unique_id=459047302]
+texture_filter = 1
+offset_left = -90.0
+offset_top = 35.0
+offset_right = 90.0
+offset_bottom = 65.0
+horizontal_alignment = 1

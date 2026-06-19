@@ -6,29 +6,31 @@
 
 ---
 
-## Day 1 — June 14 (TODAY): Mini-Aquarium 🟡
+## Day 1 — June 14: Mini-Aquarium 🟢
 
 | # | Task | Est. | Status |
 |---|---|---|---|
-| 1.1 | Arena: 3840×2160 world, wrap-around edges | 30m | 🔵 |
-| 1.2 | Background: Draw 2 water tiles (64×64) in Aseprite, set up TileMap | 30m | 🔵 |
-| 1.3 | Camera2D: Smooth follow on Pish, bounded to arena | 15m | 🔵 |
-| 1.4 | Pish movement: Mouse-follow with steering (slow turns, speed ramp) | 45m | 🔵 |
-| 1.5 | Fog shader: Full-screen radial darkness + forward vision cone | 45m | 🔵 |
+| 1.1 | Arena: 3840×2160 world, wrap-around edges | 30m | 🟢 |
+| 1.2 | Background: Draw 3 water tiles (64×64) in Aseprite, set up TileMap with noise gradient | 30m | 🟢 |
+| 1.3 | Camera2D: Smooth follow on Pish, bounded to arena | 15m | 🟢 |
+| 1.4 | Pish movement: Mouse-follow with steering (slow turns, speed ramp, turn penalty) | 45m | 🟢 |
+| 1.5 | Fog shader: Full-screen radial darkness + ambient visibility | 45m | 🟢 |
+| 1.6 | Bubbles: 4 sprite sizes as decorative overlay | 15m | 🟢 |
 
 ---
 
-## Day 2 — June 15: Core Loop
+## Day 2 — June 15: Core Loop 🟡 (Minimal)
 
 | # | Task | Est. | Status |
 |---|---|---|---|
 | 2.1 | Eating: Collision detection (Area2D), size comparison → eat or be eaten | 1h | 🔵 |
-| 2.2 | Biomass: Grow on eat, shrink on damage. Single stat — no HP bar. | 30m | 🔵 |
+| 2.2 | Biomass: Grow on eat, shrink on damage. Single stat — no separate HP. | 30m | 🔵 |
 | 2.3 | NPC fish: Spawn 5-10 fish, basic wander AI (random direction changes) | 45m | 🔵 |
-| 2.4 | NPC behavior: Size-relative — flee if smaller, neutral if similar, chase if larger | 30m | 🔵 |
-| 2.5 | HUD: Biomass meter (bar or number), mutation slots display | 30m | 🔵 |
+| 2.4 | ~~Size-relative behavior (flee/chase)~~ *(deferred — minimal loop)* | — | ~~ |
+| 2.5 | ~~HUD (biomass meter)~~ *(deferred — debug text suffices for now)* | — | ~~ |
 
-**Stretch:** Basic eating animation (sprite scale pulse). Fish Bucks essences drop on eat.
+> **Scope cut:** Size-relative NPC behavior and HUD deferred. NPCs wander only. Biomass shown as debug text.
+> **Stretch:** Basic eating animation (sprite scale pulse).
 
 ---
 

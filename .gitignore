@@ -1,6 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
 
+# Python / LSP
+__pycache__/
+*.pyc
+godot_lsp_bridge.py
+
+# Temp / swap files
+*.tmp
+*.swp
+*.swo
+*~
+
 # Build exports
 android/
 web/
